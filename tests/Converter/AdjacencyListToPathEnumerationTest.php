@@ -16,10 +16,19 @@ class AdjacencyListToPathEnumerationTest extends PHPUnit_Framework_TestCase
 {
     public function testConversion()
     {
-
         $data = require(__DIR__ . '/../fixtures/data.php');
 
-        $adjacencyList = new AdjacencyList($data);
+        $filteredData = array_map(function(array $item) {
+                return [
+                    AdjacencyList::ID => $item[AdjacencyList::ID],
+                    AdjacencyList::SORT_VALUE => $item[AdjacencyList::SORT_VALUE],
+                    AdjacencyList::PARENT_ID => $item[AdjacencyList::PARENT_ID],
+                ];
+            },
+            $data
+        );
+
+        $adjacencyList = new AdjacencyList($filteredData);
 
         $converter = new AdjacencyListToPathEnumeration();
 
