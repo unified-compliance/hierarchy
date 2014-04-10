@@ -1,0 +1,24 @@
+{
+    "name": "unified-compliance/hierarchy",
+    "description": "Manipulate hierarchical data",
+    "require-dev": {
+        "phpunit/phpunit": "~3.7.0",
+        "squizlabs/php_codesniffer": "~1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Zulch",
+            "email": "mzulch@unifiedcompliance.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ucf\\Hierarchy\\": "src/"
+        }
+    }
+}
